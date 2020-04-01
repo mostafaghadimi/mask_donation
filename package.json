@@ -1,0 +1,27 @@
+{
+  "name": "mask-donation",
+  "version": "1.0.0",
+  "description": "<div dir=rtl>",
+  "main": "schema.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mostafaghadimi/mask_donation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mostafaghadimi/mask_donation/issues"
+  },
+  "homepage": "https://github.com/mostafaghadimi/mask_donation#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.7",
+    "nodemon": "^2.0.2"
+  }
+}
