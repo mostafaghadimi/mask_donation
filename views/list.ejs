@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheet.css" type="text/css">
+    <title>اهدای ماسک</title>
+    
+</head>
+<body>
+    <div class="navbar">
+        <div>
+
+        </div>
+        <div>
+            <a href="/">
+                ثبت کدملی
+            </a>
+        </div>
+        <div>
+            <a href="/list">
+                لیست کدملی‌ها
+            </a>
+        </div>
+        <div></div>
+    </div>
+    <div class="table-container">
+        <table class="table">
+            <tr>
+                <th>شماره</th>
+                <th>کدملی</th>
+                <th>تاریخ تحویل</th>
+            </tr>
+        
+            <% for(var i = 0; i < datas.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= i + 1 %>
+                    </td>
+                    <td>
+                        <%= datas[i]['nationalCode'] %>
+                    </td>
+                    <td>
+                        <%= datas[i]['creationDate'] %>
+
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+    
+</body>
+</html>

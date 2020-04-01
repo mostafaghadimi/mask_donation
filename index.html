@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheet.css" type="text/css">
+    <title>اهدای ماسک</title>
+    <script>
+        function submitCode(){
+            var nationalCode = document.getElementById('nationalCode').value
+            var data = {
+                nationalCode: nationalCode,
+                creationDate: new Date().toLocaleDateString()
+            }
+             
+            fetch('/submit', {
+                method: 'POST',
+                redirect:'manual',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            },
+            ).then(response => {
+                return response.json()
+            }).then(jsonData => {
+                console.log('success:', jsonData)
+                history.pushState(null, null, "/lashkhor")
+            }).catch(e => {
+                console.log('error:', e)
+                return e
+            })
+        }
+
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <div>
+
+        </div>
+        <div>
+            <a href="/">
+                ثبت کدملی
+            </a>
+        </div>
+        <div>
+            <a href="/list">
+                لیست کدملی‌ها
+            </a>
+        </div>
+        <div></div>
+    </div>
+    
+    <div class="content">
+        <div>
+            <img src="mask.png" alt="اهدای ماسک">
+        </div>
+        <div class="input-container">
+            <input type="text" maxlength="10" placeholder="کد ملی را وارد کنید" id="nationalCode">
+        </div>
+        <div>
+            <button class="submit-btn" onclick="submitCode()">
+                ثبت
+            </button>
+        </div>
+    </div>
+    
+</body>
+</html>
