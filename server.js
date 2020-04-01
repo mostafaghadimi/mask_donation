@@ -50,19 +50,21 @@ app.post('/submit', (req, res) => {
                 creationDate: creationDate
             })
             console.log('salam khoshgele daei!')
-            res.redirect('/khoshgeledaei')
+            res.json({msg: 0})
         }
         else if (success.length > 0) {
             console.log('lashkhor detected')
-            res.redirect('/lashkhor')
+            res.json({msg: 1})
+            
         }
     })
 
 })
 
 app.get('/lashkhor', (req, res) => {
-    console.log('here')
-    res.send('salam')
+    res.render(
+        'error'
+    )
 })
 
 app.get('/list', (req, res) => {

@@ -66,9 +66,25 @@ a {
     transition-duration: .5s;
 }
 
-.table-container {
+.table-container, .error-container, .success-container {
     margin: auto;
     margin-top: 50px;
+}
+
+.error-container {
+    border: 1px solid #660000;
+    background-color: #ff9797;
+    color: #860000;
+    width: 440px;
+    padding: 20px;
+}
+
+.success-container {
+    border: 1px solid #186600;
+    background-color: #bbffa7;
+    color: #186600;
+    width: 440px;
+    padding: 20px;
 }
 
 .table {

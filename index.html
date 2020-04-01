@@ -12,10 +12,10 @@
                 nationalCode: nationalCode,
                 creationDate: new Date().toLocaleDateString()
             }
-             
+                
             fetch('/submit', {
                 method: 'POST',
-                redirect:'manual',
+                redirect: 'follow',
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
@@ -26,7 +26,12 @@
                 return response.json()
             }).then(jsonData => {
                 console.log('success:', jsonData)
-                history.pushState(null, null, "/lashkhor")
+                if (jsonData.msg === 0) {
+                    window.location.href = '/'
+                }
+                else {
+                    window.location.href = '/lashkhor'
+                }
             }).catch(e => {
                 console.log('error:', e)
                 return e
